@@ -1,0 +1,15 @@
+.carousel-container {
+  margin: 20px;
+  text-align: center;
+}
+
+.slide img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.slide h3 {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #004080;
+}
