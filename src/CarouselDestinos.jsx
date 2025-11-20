@@ -2,14 +2,8 @@
 import React from "react";
 import Slider from "react-slick";
 import "./CarouselDestinos.css";
-
+import {viajes} from './viajes.json';
 // Datos de ejemplo (puedes traerlos luego de tu API FastAPI)
-const destinos = [
-  { id: 1, nombre: "Hotel Madrid", img: "https://via.placeholder.com/300x200?text=Hotel+Madrid" },
-  { id: 2, nombre: "Playa Cancún", img: "https://via.placeholder.com/300x200?text=Playa+Cancun" },
-  { id: 3, nombre: "París", img: "https://via.placeholder.com/300x200?text=Paris" },
-  { id: 4, nombre: "Roma", img: "https://via.placeholder.com/300x200?text=Roma" },
-];
 
 function CarouselDestinos() {
   const settings = {
@@ -25,10 +19,10 @@ function CarouselDestinos() {
     <div className="carousel-container">
       <h2>Destinos destacados</h2>
       <Slider {...settings}>
-        {destinos.map((d) => (
+        {viajes.slice(0,5).map((d) => (
           <div key={d.id} className="slide">
-            <img src={d.img} alt={d.nombre} />
-            <h3>{d.nombre}</h3>
+            <img src={d.foto} alt={d.nombre} />
+            <h3>{d.destino}</h3>
           </div>
         ))}
       </Slider>

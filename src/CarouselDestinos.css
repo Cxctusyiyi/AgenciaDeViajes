@@ -4,8 +4,15 @@
 }
 
 .slide img {
-  width: 100%;
+  width: 95%;
+  height: 250px;
   border-radius: 8px;
+  cursor: pointer;
+}
+
+.slide img:hover {
+  
+  box-shadow: #004080 0px 4px 15px;
 }
 
 .slide h3 {
@@ -13,3 +20,5 @@
   font-size: 1.2rem;
   color: #004080;
 }
+
+

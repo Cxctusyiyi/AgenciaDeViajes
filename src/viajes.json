@@ -1,0 +1,84 @@
+{
+  "viajes": [
+    {
+      "id": 1,
+      "destino": "París, Francia",
+      "duracion_dias": 5,
+      "precio": 850,
+      "incluye": ["vuelo ida y vuelta", "hotel 4 estrellas", "tour por la ciudad"],
+      "foto": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34"
+    },
+    {
+      "id": 2,
+      "destino": "Tokio, Japón",
+      "duracion_dias": 10,
+      "precio": 2200,
+      "incluye": ["vuelo ida y vuelta", "hotel 3 estrellas", "excursiones guiadas"],
+      "foto": "https://images.unsplash.com/photo-1549693578-d683be217e58"
+    },
+    {
+      "id": 3,
+      "destino": "Cancún, México",
+      "duracion_dias": 7,
+      "precio": 1200,
+      "incluye": ["vuelo ida y vuelta", "resort todo incluido", "actividades acuáticas"],
+      "foto": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
+    },
+    {
+      "id": 4,
+      "destino": "Nueva York, EE.UU.",
+      "duracion_dias": 6,
+      "precio": 1500,
+      "incluye": ["vuelo ida y vuelta", "hotel céntrico", "tour en helicóptero"],
+      "foto": "https://images.unsplash.com/photo-1534447677768-be436bb09401"
+    },
+    {
+      "id": 5,
+      "destino": "Roma, Italia",
+      "duracion_dias": 4,
+      "precio": 900,
+      "incluye": ["vuelo ida y vuelta", "hotel 3 estrellas", "visita al Coliseo"],
+      "foto": "https://images.unsplash.com/photo-1526481280691-906943a6f5c4"
+    },
+    {
+      "id": 6,
+      "destino": "Londres, Reino Unido",
+      "duracion_dias": 5,
+      "precio": 1100,
+      "incluye": ["vuelo ida y vuelta", "hotel céntrico", "tour por museos"],
+      "foto": "https://images.unsplash.com/photo-1473959383410-df9e1f0bf77e"
+    },
+    {
+      "id": 7,
+      "destino": "Sídney, Australia",
+      "duracion_dias": 12,
+      "precio": 2800,
+      "incluye": ["vuelo ida y vuelta", "hotel 4 estrellas", "excursiones costeras"],
+      "foto": "https://images.unsplash.com/photo-1506976785307-8732e854ad89"
+    },
+    {
+      "id": 8,
+      "destino": "El Cairo, Egipto",
+      "duracion_dias": 8,
+      "precio": 1600,
+      "incluye": ["vuelo ida y vuelta", "hotel 3 estrellas", "visita a las pirámides"],
+      "foto": "https://images.unsplash.com/photo-1587486913044-1c0d6a3f6a1a"
+    },
+    {
+      "id": 9,
+      "destino": "Bali, Indonesia",
+      "duracion_dias": 9,
+      "precio": 1700,
+      "incluye": ["vuelo ida y vuelta", "villa privada", "actividades acuáticas"],
+      "foto": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
+    },
+    {
+      "id": 10,
+      "destino": "Barcelona, España",
+      "duracion_dias": 4,
+      "precio": 700,
+      "incluye": ["vuelo ida y vuelta", "hotel céntrico", "tour por la Sagrada Familia"],
+      "foto": "https://images.unsplash.com/photo-1505739773365-7fefc0b1d6b0"
+    }
+  ]
+}
