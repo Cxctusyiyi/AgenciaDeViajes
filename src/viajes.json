@@ -38,7 +38,7 @@
       "duracion_dias": 4,
       "precio": 900,
       "incluye": ["vuelo ida y vuelta", "hotel 3 estrellas", "visita al Coliseo"],
-      "foto": "https://images.unsplash.com/photo-1526481280691-906943a6f5c4"
+      "foto": "https://tse4.mm.bing.net/th/id/OIP.1tbWgjSaXzdmPv2BYPQatgHaE9?rs=1&pid=ImgDetMain&o=7&rm=3"
     },
     {
       "id": 6,
@@ -46,7 +46,7 @@
       "duracion_dias": 5,
       "precio": 1100,
       "incluye": ["vuelo ida y vuelta", "hotel céntrico", "tour por museos"],
-      "foto": "https://images.unsplash.com/photo-1473959383410-df9e1f0bf77e"
+      "foto": "https://th.bing.com/th/id/R.7db2f5ad2a41509ddb4e07976e96825d?rik=SnA8%2fdGwT%2fF8%2fw&pid=ImgRaw&r=0"
     },
     {
       "id": 7,
@@ -54,7 +54,7 @@
       "duracion_dias": 12,
       "precio": 2800,
       "incluye": ["vuelo ida y vuelta", "hotel 4 estrellas", "excursiones costeras"],
-      "foto": "https://images.unsplash.com/photo-1506976785307-8732e854ad89"
+      "foto": "https://tse1.mm.bing.net/th/id/OIP.U_IGKrJIKnoHzZC1WOYbZgAAAA?rs=1&pid=ImgDetMain&o=7&rm=3"
     },
     {
       "id": 8,
@@ -62,7 +62,7 @@
       "duracion_dias": 8,
       "precio": 1600,
       "incluye": ["vuelo ida y vuelta", "hotel 3 estrellas", "visita a las pirámides"],
-      "foto": "https://images.unsplash.com/photo-1587486913044-1c0d6a3f6a1a"
+      "foto": "https://tse2.mm.bing.net/th/id/OIP.nuiR1MyYPuM7KmK3gSWrSAHaEK?rs=1&pid=ImgDetMain&o=7&rm=3"
     },
     {
       "id": 9,
@@ -78,7 +78,7 @@
       "duracion_dias": 4,
       "precio": 700,
       "incluye": ["vuelo ida y vuelta", "hotel céntrico", "tour por la Sagrada Familia"],
-      "foto": "https://images.unsplash.com/photo-1505739773365-7fefc0b1d6b0"
+      "foto": "https://tse3.mm.bing.net/th/id/OIP.FAglbxLEqvTE7SQPNOtZPQHaFK?rs=1&pid=ImgDetMain&o=7&rm=3"
     }
   ]
 }
