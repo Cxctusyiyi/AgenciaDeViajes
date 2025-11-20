@@ -1,5 +1,5 @@
 import './Recomendados.css';
-import {viajes} from './viajes.json';
+import {viajes} from '../viajes.json';
 function Recomendados() {
 
     return(

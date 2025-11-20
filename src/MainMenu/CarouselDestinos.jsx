@@ -2,7 +2,7 @@
 import React from "react";
 import Slider from "react-slick";
 import "./CarouselDestinos.css";
-import {viajes} from './viajes.json';
+import {viajes} from '../viajes.json';
 // Datos de ejemplo (puedes traerlos luego de tu API FastAPI)
 
 function CarouselDestinos() {

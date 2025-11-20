@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import MainMenu from './MainMenu.jsx'
+import MainMenu from './MainMenu/MainMenu.jsx'
 import './App.css'
-import CarouselDestinos from './CarouselDestinos.jsx';
-import Recomendados from './Recomendados.jsx';
+import CarouselDestinos from './MainMenu/CarouselDestinos.jsx';
+import Recomendados from './MainMenu/Recomendados.jsx';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
