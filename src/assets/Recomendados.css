@@ -1,0 +1,21 @@
+
+.recomendados-container {
+    text-align: center;
+    margin-top: 5%;
+}
+
+.recomendado-item {
+    display: inline-block;
+    width: 23%;
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+
+.recomendado-item:hover {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+

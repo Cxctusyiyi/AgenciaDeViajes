@@ -4,12 +4,14 @@ import "slick-carousel/slick/slick-theme.css";
 import MainMenu from './MainMenu.jsx'
 import './App.css'
 import CarouselDestinos from './CarouselDestinos.jsx';
+import Recomendados from './assets/Recomendados.jsx';
 
 function App() {
   return (
     <>
     <MainMenu />
     <CarouselDestinos />
+    <Recomendados />
     </>
   );
 }
