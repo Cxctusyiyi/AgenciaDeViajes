@@ -1,0 +1,28 @@
+.reservas-container {
+    width: 100%; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    background-color: #004080;
+     padding: 10px 40px; 
+     box-sizing: border-box; 
+     color: white; 
+     position: relative; 
+
+}
+
+.back-button {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.logo {
+    margin-left: 3%;
+}

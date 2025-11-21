@@ -5,7 +5,9 @@ import "slick-carousel/slick/slick-theme.css";
 import "./MainMenu.css";
 import CarouselDestinos from './CarouselDestinos.jsx';
 import Recomendados from './Recomendados.jsx';
-function MainMenu() {
+
+
+function MainMenu({data}) {
   return (
     <div>
     <header className="main-menu">
@@ -25,8 +27,8 @@ function MainMenu() {
       </div>
 
     </header>
-        <CarouselDestinos />
-        <Recomendados />  
+        <CarouselDestinos data = {data}/>
+        <Recomendados data = {data}/>  
     </div>
 
   );

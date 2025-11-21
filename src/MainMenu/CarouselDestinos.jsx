@@ -1,19 +1,27 @@
-// src/components/CarouselDestinos.js
 import React from "react";
 import Slider from "react-slick";
 import "./CarouselDestinos.css";
-import {viajes} from '../viajes.json';
-// Datos de ejemplo (puedes traerlos luego de tu API FastAPI)
+import { useNavigate } from "react-router-dom";
 
-function CarouselDestinos() {
+function CarouselDestinos({data}) {
   const settings = {
     dots: true,
     infinite: true,
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 3000
   };
+
+     const navigate = useNavigate();
+
+    const handleClick = (item) => {
+      navigate("/reservar", { state: { item } });
+    };
+
+    const viajes = data.filter(item => item.tipo === "viaje");
+    const hoteles = data.filter(item => item.tipo === "hotel");
+
 
   return (
     <div className="carousel-container">
@@ -21,7 +29,7 @@ function CarouselDestinos() {
       <Slider {...settings}>
         {viajes.slice(0,5).map((d) => (
           <div key={d.id} className="slide">
-            <img src={d.foto} alt={d.nombre} />
+            <img src={d.foto} alt={d.nombre}  onClick={() => handleClick(d)}/>
             <h3>{d.destino}</h3>
           </div>
         ))}

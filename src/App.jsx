@@ -1,27 +1,26 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import MainMenu from './MainMenu/MainMenu.jsx'
-import './App.css'
-import CarouselDestinos from './MainMenu/CarouselDestinos.jsx';
-import Recomendados from './MainMenu/Recomendados.jsx';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import MainMenu from './MainMenu/MainMenu.jsx';
+import Reservar from './Reservar/Reservar.jsx';
+import {data} from './Informacion/data.json';
+import './App.css';
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 
-function App() {
+ function App() {
   return (
     <BrowserRouter>
-      <Routes >
-        <Route path= "/MainMenu" element = {<MainMenu />}/>
-        <Route path='/IniciarSesion'/>
-        <Route path='/LogIn'/>
-        <Route path='/TodosLosViajesHoteles'/>
-        <Route path='/Hotel/'/>/* Despues de la barra completar segun el viaje que se escoja */
-        <Route path='/Viaje/'/>/* Despues de la barra completar segun el hotel que se escoja */
-     </Routes>
+
+      <Routes>
+        <Route path="/" element={<MainMenu data = {data}/>} />
+        <Route path="/reservar" element={<Reservar />} />
+      </Routes>
+
+    
     </BrowserRouter>
 
   );
 }
 
-export default App
+export default App;

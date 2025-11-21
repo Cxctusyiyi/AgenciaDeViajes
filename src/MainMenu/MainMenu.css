@@ -8,7 +8,6 @@
      box-sizing: border-box; 
      color: white; 
      position: relative; 
-     z-index: 1000; 
     }
 
 .logo { 
@@ -51,9 +50,6 @@
     color: white; 
     cursor: pointer; 
     font-size: 1rem; }
-
-
-
 
 
 
