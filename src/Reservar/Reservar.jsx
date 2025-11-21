@@ -1,12 +1,17 @@
 import React from 'react';
 import "./Reservar.css";
-
+import { useNavigate } from "react-router-dom";
 
 function Reservar() {
+  const navigate = useNavigate();
+  const handleBack = () => {
+    navigate(-1); 
+  };
+
   return (
     <div>
     <header className='reservas-container'>
-      <button className="back-button">◀</button>
+      <button className="back-button" onClick={handleBack}>◀</button>
       <div className="logo">🌍 TravelApp</div>      
        <h1>Página de Reserva</h1>      
       <div className="actions">

@@ -11,7 +11,9 @@ const hoteles = data.filter(item => item.tipo === "hotel");
     const handleClick = (item) => {
       navigate("/reservar", { state: { item } });
     };
-
+    const handleVerMas = () => {
+      navigate("/vermas");
+    }
 
     return(
         <div className="recomendados-container">
@@ -25,7 +27,7 @@ const hoteles = data.filter(item => item.tipo === "hotel");
                     ))}           
             </div>
             <footer>
-                <button> Ver más viajes y destinos</button>
+                <button onClick={handleVerMas}> Ver más viajes y destinos</button>
             </footer>
         </div>
 
