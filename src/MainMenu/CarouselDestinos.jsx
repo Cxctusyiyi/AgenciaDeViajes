@@ -16,7 +16,7 @@ function CarouselDestinos({data}) {
      const navigate = useNavigate();
 
     const handleClick = (item) => {
-      navigate("/reservar", { state: { item } });
+      navigate("/reservar", { state: { item } })
     };
 
     const viajes = data.filter(item => item.tipo === "viaje");
@@ -28,8 +28,8 @@ function CarouselDestinos({data}) {
       <h2>Destinos destacados</h2>
       <Slider {...settings}>
         {viajes.slice(0,5).map((d) => (
-          <div key={d.id} className="slide">
-            <img src={d.foto} alt={d.nombre}  onClick={() => handleClick(d)}/>
+          <div key={d.id} className="slide" onClick={() => handleClick(d)}>
+            <img src={d.foto} alt={d.nombre} />
             <h3>{d.destino}</h3>
           </div>
         ))}

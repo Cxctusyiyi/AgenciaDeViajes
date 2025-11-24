@@ -5,7 +5,7 @@ import "./VerMas.css";
 
 function VerMas({data}) {
    const handleClick = (item) => {
-      navigate("/reservar", { state: { item } });
+      navigate("/reservar", { state: { item } })
     };
   const navigate = useNavigate();
   const handleBack = () => {
@@ -32,15 +32,15 @@ function VerMas({data}) {
     <div className="viajesyhoteles-list">               
                     {viajes.map((d) => (
 
-                        <div key={d.id} className="viajesyhoteles-item">
-                        <img className='viajesyhoteles-imagen' src={d.foto} alt={d.nombre}  onClick={() => handleClick(d)}/>
+                        <div key={d.id} className="viajesyhoteles-item" onClick={() => handleClick(d)}>
+                        <img className='viajesyhoteles-imagen' src={d.foto} alt={d.nombre} />
                         <h3>{d.destino} - {d.precio}€</h3>
                         </div>
                     ))}
                     {hoteles.map((d) => (
 
-                        <div key={d.id} className="viajesyhoteles-item">
-                        <img className='viajesyhoteles-imagen' src={d.foto} alt={d.nombre}  onClick={() => handleClick(d)}/>
+                        <div key={d.id} className="viajesyhoteles-item" onClick={() => handleClick(d)}>
+                        <img className='viajesyhoteles-imagen' src={d.foto} alt={d.nombre} />
                         <h3>{d.nombre} - {d.precio_por_noche}€</h3>
                         </div>
                     ))}            

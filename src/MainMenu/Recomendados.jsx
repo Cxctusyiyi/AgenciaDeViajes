@@ -9,7 +9,7 @@ const hoteles = data.filter(item => item.tipo === "hotel");
     const navigate = useNavigate();
 
     const handleClick = (item) => {
-      navigate("/reservar", { state: { item } });
+      navigate("/reservar", { state: { item } })
     };
     const handleVerMas = () => {
       navigate("/vermas");
@@ -20,8 +20,8 @@ const hoteles = data.filter(item => item.tipo === "hotel");
             <h2>Recomendados para ti</h2>
             <div className="recomendados-list">               
                     {viajes.slice(5,9).map((d) => (
-                              <div key={d.id} className="recomendado-item">
-                                <img className='recomendado-imagen' src={d.foto} alt={d.nombre}  onClick={() => handleClick(d)}/>
+                              <div key={d.id} className="recomendado-item" onClick={() => handleClick(d)}>
+                                <img className='recomendado-imagen' src={d.foto} alt={d.nombre} />
                                 <h3>{d.destino}</h3>
                               </div>
                     ))}           
