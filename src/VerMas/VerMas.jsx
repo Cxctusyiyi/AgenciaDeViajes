@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 import "./VerMas.css";
-
+import Header from '../Headers/Header.jsx';
 
 function VerMas({data}) {
    const handleClick = (item) => {
@@ -17,15 +17,8 @@ function VerMas({data}) {
   return(
 
     <div>
-    <header className='viajesyhoteles-container'>
-      <button className="back-button" onClick={handleBack}>◀</button>
-      <div className="logo">🌍 TravelApp</div>      
-       <h1>Hoteles y viajes</h1>      
-      <div className="actions">
-        <button className="login">Iniciar sesión</button>
-        <button className="cart">🛒 Carrito</button>
-      </div>
-    </header>
+
+    <Header />
     
     <div className="filtros"> "Filtros para viajes"</div>
     

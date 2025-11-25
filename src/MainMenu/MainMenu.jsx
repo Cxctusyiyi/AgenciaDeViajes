@@ -5,28 +5,13 @@ import "slick-carousel/slick/slick-theme.css";
 import "./MainMenu.css";
 import CarouselDestinos from './CarouselDestinos.jsx';
 import Recomendados from './Recomendados.jsx';
-
+import HeaderMain from '../Headers/HeaderMain.jsx';
 
 function MainMenu({data}) {
+
   return (
     <div>
-    <header className="main-menu">
-     
-      <div className="logo">🌍 TravelApp</div>
-
-      
-      <div className="search">
-        <input type="text" placeholder="Buscar destinos o hoteles..." />
-        <button>🔍</button>
-      </div>
-
-      
-      <div className="actions">
-        <button className="login">Iniciar sesión</button>
-        <button className="cart">🛒 Carrito</button>
-      </div>
-
-    </header>
+        <HeaderMain />
         <CarouselDestinos data = {data}/>
         <Recomendados data = {data}/>  
     </div>

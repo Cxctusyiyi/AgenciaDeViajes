@@ -1,5 +1,6 @@
 import React from 'react';
 import "./Reservar.css";
+import Header from '../Headers/Header';
 import { useNavigate } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -38,15 +39,9 @@ function Reservar() {
 
   return (
     <div>
-    <header className='reservas-container'>
-      <button className="back-button" onClick={handleBack}>◀</button>
-      <div className="logo">🌍 TravelApp</div>      
-       <h1>Página de Reserva</h1>      
-      <div className="actions">
-        <button className="login">Iniciar sesión</button>
-        <button className="cart"> Carrito</button>
-      </div>
-    </header>
+      
+      <Header />
+
      {item.destino && (
 
   <div className="reservar-contenido">
@@ -95,7 +90,7 @@ function Reservar() {
               </li>
               <li><strong>Valoracion </strong> <Estrellas valor = {item.estrellas}/>  </li>
             </ul>
-            <button className="reservar-boton">Reservar ahora</button>
+            <button className="reservar-boton">Reservar ahora</button>  /* Falta implementar funcionalidad */
           </div>
 
         </div>

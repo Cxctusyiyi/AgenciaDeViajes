@@ -1,0 +1,17 @@
+[
+  {
+    "usuario": "yiyi",
+    "correo": "yiyi@gmail.com",
+    "contraseña": "12345"
+  },
+  {
+    "usuario": "maria",
+    "correo": "maria@hotmail.com",
+    "contraseña": "abcde"
+  },
+  {
+    "usuario": "juan",
+    "correo": "juan@yahoo.com",
+    "contraseña": "qwerty"
+  }
+]
