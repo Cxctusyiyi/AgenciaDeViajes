@@ -9,10 +9,21 @@
      color: white; 
      position: relative; 
     }
+.logo {
+  flex-shrink: 0;
+  padding-right: 20px;
+}
 
-.logo { 
-    font-size: 1.5rem; 
-    font-weight: bold; }
+.logo:hover{
+
+    cursor:pointer;
+}
+
+.logo img { 
+    width: auto;
+    height: 80px;
+    object-fit: contain;
+     }
 
 .search { 
     flex: 1; 

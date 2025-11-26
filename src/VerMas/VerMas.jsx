@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 import "./VerMas.css";
-import Header from '../Headers/Header.jsx';
+import Header from '../Headers/HeaderMain.jsx';
 
 function VerMas({data}) {
    const handleClick = (item) => {

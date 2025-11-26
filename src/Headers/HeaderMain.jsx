@@ -1,20 +1,32 @@
     import './HeaderMain.css';
-    import {useNavigate} from "react-router-dom";
-    
+    import {useNavigate, useLocation} from "react-router-dom";
+    import Logo from '../assets/TravelWebLogo.png';
     function Header(){
-
+    
     const navigate = useNavigate();
+    const handleBack = () => {
+    navigate(-1);
+    };
     const handleInic = () => {
     navigate("/iniciarsesion");
     }
+    const handleMain = () => {
+      navigate("/");
+    };
     const handleCart = () => {
     navigate("/carrito");
     }
-
+    const location = useLocation(); 
+    const pathVerMas = location.pathname === "/vermas"; 
     return (
+      
     <header className="main-menu">
-     
-      <div className="logo">🌍 TravelApp</div>
+      
+      {pathVerMas && (
+        <button className="back-button" onClick={handleBack}>◀</button>
+      )}
+
+      <div className="logo" onClick={handleMain} ><img src={Logo} alt='>TravelWeb'/></div>
 
       
       <div className="search">
