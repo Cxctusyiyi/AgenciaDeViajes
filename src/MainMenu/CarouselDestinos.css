@@ -1,0 +1,23 @@
+.carousel-container {
+  margin: 20px;
+  text-align: center;
+}
+
+.slide img {
+  width: 95%;
+  height: 250px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.slide img:hover {
+  
+  box-shadow: #004080 0px 4px 15px;
+}
+
+.slide h3 {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #004080;
+}
+

@@ -1,0 +1,210 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "destino": "París, Francia",
+      "duracion_dias": 5,
+      "precio": 850,
+      "incluye": ["vuelo ida y vuelta", "hotel 4 estrellas", "tour por la ciudad"],
+      "foto": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34",
+      "tipo": "viaje"
+    },
+    {
+      "id": 2,
+      "destino": "Tokio, Japón",
+      "duracion_dias": 10,
+      "precio": 2200,
+      "incluye": ["vuelo ida y vuelta", "hotel 3 estrellas", "excursiones guiadas"],
+      "foto": "https://images.unsplash.com/photo-1549693578-d683be217e58",
+      "tipo": "viaje"
+    },
+    {
+      "id": 3,
+      "destino": "Cancún, México",
+      "duracion_dias": 7,
+      "precio": 1200,
+      "incluye": ["vuelo ida y vuelta", "resort todo incluido", "actividades acuáticas"],
+      "foto": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+      "tipo": "viaje"
+    },
+    {
+      "id": 4,
+      "destino": "Nueva York, EE.UU.",
+      "duracion_dias": 6,
+      "precio": 1500,
+      "incluye": ["vuelo ida y vuelta", "hotel céntrico", "tour en helicóptero"],
+      "foto": "https://images.unsplash.com/photo-1534447677768-be436bb09401",
+      "tipo": "viaje"
+    },
+    {
+      "id": 5,
+      "destino": "Roma, Italia",
+      "duracion_dias": 4,
+      "precio": 900,
+      "incluye": ["vuelo ida y vuelta", "hotel 3 estrellas", "visita al Coliseo"],
+      "foto": "https://tse4.mm.bing.net/th/id/OIP.1tbWgjSaXzdmPv2BYPQatgHaE9?rs=1&pid=ImgDetMain&o=7&rm=3",
+      "tipo": "viaje"
+    },
+    {
+      "id": 6,
+      "destino": "Londres, Reino Unido",
+      "duracion_dias": 5,
+      "precio": 1100,
+      "incluye": ["vuelo ida y vuelta", "hotel céntrico", "tour por museos"],
+      "foto": "https://th.bing.com/th/id/R.7db2f5ad2a41509ddb4e07976e96825d?rik=SnA8%2fdGwT%2fF8%2fw&pid=ImgRaw&r=0",
+      "tipo": "viaje"
+    },
+    {
+      "id": 7,
+      "destino": "Sídney, Australia",
+      "duracion_dias": 12,
+      "precio": 2800,
+      "incluye": ["vuelo ida y vuelta", "hotel 4 estrellas", "excursiones costeras"],
+      "foto": "https://tse1.mm.bing.net/th/id/OIP.U_IGKrJIKnoHzZC1WOYbZgAAAA?rs=1&pid=ImgDetMain&o=7&rm=3",
+      "tipo": "viaje"
+    },
+    {
+      "id": 8,
+      "destino": "El Cairo, Egipto",
+      "duracion_dias": 8,
+      "precio": 1600,
+      "incluye": ["vuelo ida y vuelta", "hotel 3 estrellas", "visita a las pirámides"],
+      "foto": "https://tse2.mm.bing.net/th/id/OIP.nuiR1MyYPuM7KmK3gSWrSAHaEK?rs=1&pid=ImgDetMain&o=7&rm=3",
+      "tipo": "viaje"
+    },
+    {
+      "id": 9,
+      "destino": "Bali, Indonesia",
+      "duracion_dias": 9,
+      "precio": 1700,
+      "incluye": ["vuelo ida y vuelta", "villa privada", "actividades acuáticas"],
+      "foto": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+      "tipo": "viaje"
+    },
+    {
+      "id": 10,
+      "destino": "Barcelona, España",
+      "duracion_dias": 4,
+      "precio": 700,
+      "incluye": ["vuelo ida y vuelta", "hotel céntrico", "tour por la Sagrada Familia"],
+      "foto": "https://tse3.mm.bing.net/th/id/OIP.FAglbxLEqvTE7SQPNOtZPQHaFK?rs=1&pid=ImgDetMain&o=7&rm=3",
+      "tipo": "viaje"
+    },    
+
+
+    {
+      "id": 11,
+      "nombre": "Hotel Gran Palace",
+      "ciudad": "Madrid",
+      "estrellas": 5,
+      "precio_por_noche": 180,
+      "servicios": ["wifi gratis", "spa", "desayuno incluido"],
+      "foto": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
+      "tipo": "hotel"
+    },
+    {
+      "id": 12,
+      "nombre": "Sunset Beach Resort",
+      "ciudad": "Cancún",
+      "estrellas": 4,
+      "precio_por_noche": 140,
+      "servicios": ["piscina", "bar en la playa", "todo incluido"],
+      "foto": "https://th.bing.com/th/id/OIP.4u0GLkmHce9SUL0gS-Sw9QHaEo?w=260&h=180&c=7&r=0&o=7&pid=1.7&rm=3",
+      "tipo": "hotel"
+    },
+    {
+      "id": 13,
+      "nombre": "Tokyo Central Inn",
+      "ciudad": "Tokio",
+      "estrellas": 3,
+      "precio_por_noche": 95,
+      "servicios": ["wifi gratis", "recepción 24h", "cerca del metro"],
+      "foto": "https://th.bing.com/th/id/OIP.ZFn6JohHYPVRUq5S3tWnPwHaFj?w=175&h=180&c=7&r=0&o=7&pid=1.7&rm=3",
+      "tipo": "hotel"
+    },
+    {
+      "id": 14,
+      "nombre": "Royal Tower Hotel",
+      "ciudad": "París",
+      "estrellas": 5,
+      "precio_por_noche": 220,
+      "servicios": ["restaurante gourmet", "spa", "vista a la Torre Eiffel"],
+      "foto": "https://images.unsplash.com/photo-1560347876-aeef00ee58a1?auto=format&fit=crop&w=800&q=80",
+      "tipo": "hotel"
+    },
+    {
+      "id": 15,
+      "nombre": "Colosseum View Hotel",
+      "ciudad": "Roma",
+      "estrellas": 4,
+      "precio_por_noche": 160,
+      "servicios": ["wifi gratis", "desayuno incluido", "terraza"],
+      "foto": "https://th.bing.com/th/id/OIP.1Z-9pSxH1gNP3qhaVExnZgHaE8?w=264&h=180&c=7&r=0&o=7&pid=1.7&rm=3",
+      "tipo": "hotel"
+    },
+    {
+      "id": 16,
+      "nombre": "London Bridge Suites",
+      "ciudad": "Londres",
+      "estrellas": 4,
+      "precio_por_noche": 175,
+      "servicios": ["wifi gratis", "bar", "cerca del metro"],
+      "foto": "https://th.bing.com/th/id/OIP.n17DxTMGHTYkjGgdgSLWPQHaDS?w=298&h=155&c=7&r=0&o=7&pid=1.7&rm=3",
+      "tipo": "hotel"
+    },
+    {
+      "id": 17,
+      "nombre": "Sydney Opera Hotel",
+      "ciudad": "Sídney",
+      "estrellas": 5,
+      "precio_por_noche": 250,
+      "servicios": ["piscina", "spa", "vista al puerto"],
+      "foto": "https://th.bing.com/th/id/OIP.0nY4qZPoZyYwtF7Vc6I7vQHaE7?w=249&h=180&c=7&r=0&o=7&pid=1.7&rm=3",
+      "tipo": "hotel"
+    },
+    {
+      "id": 18,
+      "nombre": "Nile View Resort",
+      "ciudad": "El Cairo",
+      "estrellas": 4,
+      "precio_por_noche": 130,
+      "servicios": ["wifi gratis", "piscina", "restaurante"],
+      "foto": "https://th.bing.com/th/id/OIP.fgn_eAiQtrE35G_EtdI1JAHaGK?w=219&h=182&c=7&r=0&o=7&pid=1.7&rm=3",
+      "tipo": "hotel"
+    },
+   {
+  "id": 19,
+  "nombre": "Bali Paradise Villas",
+  "ciudad": "Bali",
+  "estrellas": 5,
+  "precio_por_noche": 200,
+  "servicios": ["piscina privada", "spa", "todo incluido"],
+  "foto": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+  "tipo": "hotel"
+}
+
+
+
+
+  ]
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
