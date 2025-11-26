@@ -1,6 +1,7 @@
     import './HeaderMain.css';
     import {useNavigate, useLocation} from "react-router-dom";
     import Logo from '../assets/TravelWebLogo.png';
+    import { useState , useEffect} from 'react';
     function Header(){
     
     const navigate = useNavigate();
@@ -16,6 +17,17 @@
     const handleCart = () => {
     navigate("/carrito");
     }
+
+
+    const [usuario, setUsuario] = useState(null);
+
+    useEffect(() => {
+    const datosGuardados = localStorage.getItem("usuario");
+    if (datosGuardados) {
+      setUsuario(datosGuardados); 
+    }
+  }, []);
+
 
     const location = useLocation(); 
     const pathVerMas = location.pathname === "/vermas"; 
@@ -41,12 +53,24 @@
       </div>)
     }
 
-
-      
+    { !usuario ?(
       <div className="actions">
         <button onClick={handleInic} className="login">Iniciar sesión</button>
         <button onClick={handleCart} className="cart">🛒 Carrito</button>
-      </div>
+      </div>)
+
+      :( 
+
+         (<div className="actions">
+        {!pathIniciar &&(<button onClick={handleInic} className="login">{usuario}</button>)}
+        <button onClick={handleCart} className="cart">🛒 Carrito</button>
+        </div>)
+
+      )
+
+
+    }
+
 
     </header>
     );

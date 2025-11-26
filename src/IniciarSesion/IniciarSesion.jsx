@@ -1,12 +1,10 @@
 import "./IniciarSesion.css";
 import { useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
-import { UserContext } from "../Context/UserContext";
+import { useState } from "react";
 import Header from "../Headers/HeaderMain.jsx";
 
 
 function IniciarSesion({users}) {
-    const {setUsuario} = useContext(UserContext);
     const navigate = useNavigate();
 
     const [formData, setFormData] = useState({ usuario: "", contraseña: "" });
@@ -34,8 +32,9 @@ function IniciarSesion({users}) {
             setError("Usuario o contraseña incorrectos.");
             return;
         }
+
+        localStorage.setItem("usuario", userFound);
         
-        setUsuario(userFound.usuario);
         navigate("/");
     };
 
