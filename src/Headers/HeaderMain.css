@@ -11,12 +11,9 @@
     }
 .logo {
   flex-shrink: 0;
-  padding-right: 20px;
-}
+  margin-right: auto;
+  cursor:pointer;
 
-.logo:hover{
-
-    cursor:pointer;
 }
 
 .logo img { 

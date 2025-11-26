@@ -1,17 +1,12 @@
 import './Registro.css';
-import Header  from '../Headers/Header';
+import Header from "../Headers/HeaderMain.jsx";
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
 
 function Registro({users}){
     const navigate = useNavigate();
 
-    const handleBack = () => {
-        navigate(-1);
-    }
-    const handleInic = () => {
-        navigate("/iniciarsesion");
-    }
+
 
  const [formData, setFormData] = useState({
     usuario: "",

@@ -2,7 +2,7 @@ import "./IniciarSesion.css";
 import { useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { UserContext } from "../Context/UserContext";
-import Header from "../Headers/Header.jsx";
+import Header from "../Headers/HeaderMain.jsx";
 
 
 function IniciarSesion({users}) {
