@@ -17,7 +17,10 @@
     const handleCart = () => {
     navigate("/carrito");
     }
-
+    const cerrarSesion = () =>{
+      localStorage.clear();
+      setUsuario(null);
+    }
 
     const [usuario, setUsuario] = useState(null);
 
@@ -55,14 +58,15 @@
 
     { !usuario ?(
       <div className="actions">
-        <button onClick={handleInic} className="login">Iniciar sesión</button>
+        {!pathIniciar && (<button onClick={handleInic} className="login">Iniciar sesión</button>)}
         <button onClick={handleCart} className="cart">🛒 Carrito</button>
       </div>)
 
       :( 
 
          (<div className="actions">
-        {!pathIniciar &&(<button onClick={handleInic} className="login">{usuario}</button>)}
+        {!pathIniciar &&(<button onClick={cerrarSesion} className='cerrarSesion'>{usuario}</button>)}
+        <button> Reservas </button>
         <button onClick={handleCart} className="cart">🛒 Carrito</button>
         </div>)
 
