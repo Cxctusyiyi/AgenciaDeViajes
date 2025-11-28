@@ -5,16 +5,41 @@ import { useNavigate } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { useEffect,useState } from 'react';
 function Reservar() {
 
     const navigate = useNavigate();
 
-    const handleBack = () => {
-      navigate(-1);};
-
     const location = useLocation();
 
     const {item} = location.state || {};  
+
+    const [usuario, setUsuario] = useState(null);
+    const [error, setError] = useState(""); 
+    useEffect(() => {
+    const datosGuardados = localStorage.getItem("usuario");
+    if (datosGuardados) {
+      setUsuario(datosGuardados); 
+    }
+    }, []);
+
+    function reservar(){
+      
+      if(!usuario){
+        setError("Tienes que iniciar sesion para poder reservar");
+      }
+      else{
+
+        usuario.reservas.append(item)
+
+      }
+
+    }
+
+
+
+
+
 
     function Estrellas({ valor }) {
       const estrellas = [];
@@ -90,7 +115,8 @@ function Reservar() {
               </li>
               <li><strong>Valoracion </strong> <Estrellas valor = {item.estrellas}/>  </li>
             </ul>
-            <button className="reservar-boton">Reservar ahora</button>  /* Falta implementar funcionalidad */
+            <button className="reservar-boton" onClick={reservar}>Reservar ahora</button>  /* Falta implementar funcionalidad */
+            {error && <p style={{ color: "red" }}>{error}</p>}
           </div>
 
         </div>

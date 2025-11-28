@@ -2,16 +2,19 @@
   {
     "usuario": "yiyi",
     "correo": "yiyi@gmail.com",
-    "contraseña": "12345"
+    "contraseña": "12345",
+    "reservas" : []
   },
   {
     "usuario": "maria",
     "correo": "maria@hotmail.com",
-    "contraseña": "abcde"
+    "contraseña": "abcde",
+    "reservas" : []
   },
   {
     "usuario": "juan",
     "correo": "juan@yahoo.com",
-    "contraseña": "qwerty"
+    "contraseña": "qwerty",
+    "reservas" : []
   }
 ]

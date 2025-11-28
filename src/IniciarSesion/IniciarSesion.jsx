@@ -33,7 +33,7 @@ function IniciarSesion({users}) {
             return;
         }
 
-        localStorage.setItem("usuario", userFound.usuario);
+        localStorage.setItem("usuario", JSON.stringify( userFound.usuario));
         
         navigate("/");
     };

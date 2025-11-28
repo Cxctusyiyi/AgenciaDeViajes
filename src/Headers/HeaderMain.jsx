@@ -17,6 +17,10 @@
     const handleCart = () => {
     navigate("/carrito");
     }
+    const handleReservas = () =>{
+      navigate("/misreservas");
+
+    }
     const cerrarSesion = () =>{
       localStorage.clear();
       setUsuario(null);
@@ -66,7 +70,7 @@
 
          (<div className="actions">
         {!pathIniciar &&(<button onClick={cerrarSesion} className='cerrarSesion'>{usuario}</button>)}
-        <button> Reservas </button>
+        <button onClick={handleReservas}> Reservas </button>
         <button onClick={handleCart} className="cart">🛒 Carrito</button>
         </div>)
 
