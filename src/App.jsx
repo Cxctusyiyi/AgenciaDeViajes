@@ -13,7 +13,6 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import IniciarSesion from './IniciarSesion/IniciarSesion.jsx';
 
 
-
  function App() {
   return (
     <BrowserRouter>

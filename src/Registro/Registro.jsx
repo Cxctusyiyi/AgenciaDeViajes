@@ -24,26 +24,40 @@ function Registro({users}){
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (users.some(u => u.usuario === formData.usuario) || users.some(u => u.correo === formData.correo) ) {
-        setError("Ya existe un usuario con ese nombre/correo.");
-        setFormData({
-            usuario: "",
-            correo: "",
-            contraseña: "",
-            confirmar: "",
-        });
-      return;
-    }
 
     if (formData.contraseña !== formData.confirmar) {
       setError("Las contraseñas no coinciden.");
       return;
     }
 
+    try {
+    const response = await fetch("http://127.0.0.1:8000/usuarios/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        usuario: formData.usuario,
+        correo: formData.correo,
+        contraseña: formData.contraseña,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Error al registrar usuario");
+    }
+
+    const data = await response.json();
+    console.log(data); 
+
+    
+
     navigate("/iniciarsesion");
+     } catch (err) {
+    setError(err.message);
+  }
   };
 
   return (
