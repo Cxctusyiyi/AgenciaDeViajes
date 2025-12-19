@@ -1,19 +1,9 @@
 from sqlalchemy import text
-from database import engine
+from .database import engine
 
 
-def insertar_usuario(usuario, correo, contraseña):
-    with engine.connect() as conn:
-        query = text("""
-            INSERT INTO usuarios (usuario, correo, contraseña)
-            VALUES (:usuario, :correo, :contraseña)
-        """)
-        conn.execute(query, {"usuario": usuario, "correo": correo, "contraseña": contraseña})
-        conn.commit()
-        
-       
 
-def insertar_reserva(usuario_id: int, item_id: int, tipo: str):
+def crear_reserva(usuario_id: int, item_id: int, tipo: str):
 
     with engine.connect() as conn:
         if tipo == "viaje":
@@ -29,7 +19,7 @@ def insertar_reserva(usuario_id: int, item_id: int, tipo: str):
                 VALUES (:usuario_id, :hotel_id)
             """)
             conn.execute(query, {"usuario_id": usuario_id, "hotel_id": item_id})
-
+            
         else:
             raise ValueError("El tipo debe ser 'viaje' o 'hotel'")
 
@@ -37,19 +27,12 @@ def insertar_reserva(usuario_id: int, item_id: int, tipo: str):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+def listar_reservas():
+    with engine.connect() as conn:
+        query = text("SELECT * FROM reservas")
+        result = conn.execute(query)
+        return result.fetchall()
+        
 
 
 

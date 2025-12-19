@@ -1,14 +1,11 @@
 import React from 'react';
 import "./Reservar.css";
 import Header from "../Headers/HeaderMain.jsx";
-import { useNavigate } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { useEffect,useState } from 'react';
 function Reservar() {
-
-    const navigate = useNavigate();
 
     const location = useLocation();
 
@@ -16,29 +13,28 @@ function Reservar() {
 
     const [usuario, setUsuario] = useState(null);
     const [error, setError] = useState(""); 
+
     useEffect(() => {
     const datosGuardados = localStorage.getItem("usuario");
     if (datosGuardados) {
-      setUsuario(datosGuardados); 
+      setUsuario(JSON.parse(datosGuardados)); 
     }
+    else {setUsuario(null)}
+
+
     }, []);
 
     function reservar(){
       
-      if(!usuario){
+      if(usuario === null){
         setError("Tienes que iniciar sesion para poder reservar");
       }
       else{
 
-        usuario.reservas.append(item)
-
+        usuario.reservas.push(item)
+        localStorage.setItem("usuario", JSON.stringify(usuario))
       }
-
     }
-
-
-
-
 
 
     function Estrellas({ valor }) {
@@ -56,10 +52,6 @@ function Reservar() {
 
       return <div>{estrellas}</div>;
     }
-      
-   if (!item) {
-    return <p>No se seleccionó ningún hotel ni viaje</p>;
-  }
     
 
   return (
@@ -88,7 +80,8 @@ function Reservar() {
         {item.incluye }
       </li>
     </ul>
-    <button className="reservar-boton">Reservar ahora</button>
+    <button className="reservar-boton" onClick={reservar}>Reservar ahora</button>
+    {error && <p style={{ color: "red" }}>{error}</p>}
   </div>
 </div>
 
@@ -115,7 +108,7 @@ function Reservar() {
               </li>
               <li><strong>Valoracion </strong> <Estrellas valor = {item.estrellas}/>  </li>
             </ul>
-            <button className="reservar-boton" onClick={reservar}>Reservar ahora</button>  /* Falta implementar funcionalidad */
+            <button className="reservar-boton" onClick={reservar}>Reservar ahora</button>  
             {error && <p style={{ color: "red" }}>{error}</p>}
           </div>
 

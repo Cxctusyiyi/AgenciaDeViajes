@@ -22,20 +22,29 @@ function IniciarSesion({users}) {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setError("");
         
-        const userFound = users.find(u => u.usuario === formData.usuario && u.contraseña === formData.contraseña);
-        
-        if (!userFound) {
-            setError("Usuario o contraseña incorrectos.");
-            return;
-        }
+       const response = await fetch( "http://127.0.0.1:8000/usuarios/login" ,{
 
-        localStorage.setItem("usuario", JSON.stringify( userFound.usuario));
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+            usuario: formData.usuario,
+            contraseña: formData.contraseña
+        }),
+       });
         
+       const data = await response.json();
+
+       if(response.ok){
+        console.log("Login correcto", data);
+        localStorage.setItem("usuario", JSON.stringify(data));
         navigate("/");
+       } else console.log("Error en el login", data);
+
+        
     };
 
     return(

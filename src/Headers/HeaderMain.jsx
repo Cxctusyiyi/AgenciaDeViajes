@@ -24,6 +24,7 @@
     const cerrarSesion = () =>{
       localStorage.clear();
       setUsuario(null);
+      navigate("/");
     }
 
     const [usuario, setUsuario] = useState(null);
