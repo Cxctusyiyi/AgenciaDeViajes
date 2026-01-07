@@ -27,12 +27,12 @@
       navigate("/");
     }
 
-    const [usuario, setUsuario] = useState(null);
+    const [usuarioActual, setUsuario] = useState(null);
 
     useEffect(() => {
     const datosGuardados = localStorage.getItem("usuario");
     if (datosGuardados) {
-      setUsuario(datosGuardados); 
+      setUsuario(datosGuardados);
     }
   }, []);
 
@@ -61,7 +61,7 @@
       </div>)
     }
 
-    { !usuario ?(
+    { !usuarioActual ?(
       <div className="actions">
         {!pathIniciar && (<button onClick={handleInic} className="login">Iniciar sesión</button>)}
         <button onClick={handleCart} className="cart">🛒 Carrito</button>
@@ -70,7 +70,7 @@
       :( 
 
          (<div className="actions">
-        {!pathIniciar &&(<button onClick={cerrarSesion} className='cerrarSesion'>{usuario}</button>)}
+        {!pathIniciar &&(<button onClick={cerrarSesion} className='cerrarSesion'>{usuarioActual}</button>)}
         <button onClick={handleReservas}> Reservas </button>
         <button onClick={handleCart} className="cart">🛒 Carrito</button>
         </div>)
