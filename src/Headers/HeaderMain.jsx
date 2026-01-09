@@ -15,7 +15,7 @@
       navigate("/");
     };
     const handleCart = () => {
-    navigate("/carrito");
+    navigate("/cart");
     }
     const handleReservas = () =>{
       navigate("/misreservas");
@@ -32,7 +32,12 @@
     useEffect(() => {
     const datosGuardados = localStorage.getItem("usuario");
     if (datosGuardados) {
-      setUsuario(datosGuardados);
+      try {
+        const usuarioObj = JSON.parse(datosGuardados);
+        setUsuario(usuarioObj.usuario);
+      } catch (e) {
+        setUsuario(null);
+      }
     }
   }, []);
 
@@ -41,8 +46,7 @@
     const pathVerMas = location.pathname === "/vermas"; 
     const pathMain = location.pathname === "/";
     const pathIniciar = location.pathname === "/iniciarsesion";
-    const pathRegistro = location.pathname === "/registro";
-    const pathReservar = location.pathname === "/reservar";
+
  
     return (
       
