@@ -1,38 +1,82 @@
 import React from 'react';
 import "./Reservar.css";
 import Header from "../Headers/HeaderMain.jsx";
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { useEffect,useState } from 'react';
+
+const API_URL = "http://127.0.0.1:8000";
+
 function Reservar() {
 
     const location = useLocation();
+    const navigate = useNavigate();
 
     const {item} = location.state || {};  
 
     const [usuario, setUsuario] = useState(null);
     const [error, setError] = useState(""); 
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
     const datosGuardados = localStorage.getItem("usuario");
     if (datosGuardados) {
-      setUsuario(JSON.parse(datosGuardados)); 
+      try {
+        setUsuario(JSON.parse(datosGuardados));
+      } catch (e) {
+        setUsuario(null);
+      }
     }
     else {setUsuario(null)}
 
 
     }, []);
 
-    function reservar(){
+    async function reservar(){
       
       if(usuario === null){
-        setError("Tienes que iniciar sesion para poder reservar");
+        setError("Tienes que iniciar sesión para poder reservar");
+        return;
       }
-      else{
 
-        usuario.reservas.push(item)
-        localStorage.setItem("usuario", JSON.stringify(usuario))
+      if(!item){
+        setError("No hay item para reservar");
+        return;
+      }
+
+      setLoading(true);
+      setError("");
+
+      try {
+        const tipo = item.tipo === "viaje" ? "viaje" : "hotel";
+        const id_item = item.id;
+
+        const response = await fetch(`${API_URL}/misreservas`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            usuario_id: usuario.id,
+            id_hotel: tipo === "hotel" ? id_item : null,
+            id_viaje: tipo === "viaje" ? id_item : null,
+            tipo: tipo
+          })
+        });
+
+        const data = await response.json();
+
+        if(response.ok){
+          setError("");
+          alert("¡Reserva realizada con éxito!");
+          navigate("/");
+        } else {
+          setError(data.detail || "Error al realizar la reserva");
+        }
+      } catch (err) {
+        console.error("Error en reserva:", err);
+        setError("Error de conexión al servidor");
+      } finally {
+        setLoading(false);
       }
     }
 
@@ -80,7 +124,9 @@ function Reservar() {
         {item.incluye }
       </li>
     </ul>
-    <button className="reservar-boton" onClick={reservar}>Reservar ahora</button>
+    <button className="reservar-boton" onClick={reservar} disabled={loading}>
+      {loading ? "Reservando..." : "Reservar ahora"}
+    </button>
     {error && <p style={{ color: "red" }}>{error}</p>}
   </div>
 </div>
@@ -108,7 +154,9 @@ function Reservar() {
               </li>
               <li><strong>Valoracion </strong> <Estrellas valor = {item.estrellas}/>  </li>
             </ul>
-            <button className="reservar-boton" onClick={reservar}>Reservar ahora</button>  
+            <button className="reservar-boton" onClick={reservar} disabled={loading}>
+              {loading ? "Reservando..." : "Reservar ahora"}
+            </button>
             {error && <p style={{ color: "red" }}>{error}</p>}
           </div>
 

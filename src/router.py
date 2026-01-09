@@ -1,7 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from API import hoteles,reservas,usuarios,viajes
-
+from API import hoteles, reservas, usuarios, viajes
 
 app = FastAPI()
 
@@ -14,9 +13,13 @@ app.add_middleware(
 )
 
 app.include_router(usuarios.router)
+app.include_router(hoteles.router)
+app.include_router(viajes.router)
+app.include_router(reservas.router)
 
 @app.get("/")
 def leer_raiz():
     return {"mensaje": "¡API de Agencia de Viajes funcionando!"}
+
 
 
