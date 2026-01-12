@@ -6,7 +6,6 @@ import Reservar from './Reservar/Reservar.jsx';
 import VerMas from './VerMas/VerMas.jsx';
 import Registro from './Registro/Registro.jsx';
 import MisReservas from './MisReservas/MisReservas.jsx';
-import Cart from './Cart/Cart.jsx';
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import IniciarSesion from './IniciarSesion/IniciarSesion.jsx';
@@ -53,7 +52,6 @@ function App() {
         <Route path="/registro" element={<Registro />} />
         <Route path="/iniciarsesion" element={<IniciarSesion />} />
         <Route path="/misreservas" element={<MisReservas />} /> 
-        <Route path="/cart" element = {<Cart/>}/>
       </Routes>
     </BrowserRouter>
   );

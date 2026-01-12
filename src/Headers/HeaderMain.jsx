@@ -14,9 +14,7 @@
     const handleMain = () => {
       navigate("/");
     };
-    const handleCart = () => {
-    navigate("/cart");
-    }
+
     const handleReservas = () =>{
       navigate("/misreservas");
 
@@ -68,7 +66,7 @@
     { !usuarioActual ?(
       <div className="actions">
         {!pathIniciar && (<button onClick={handleInic} className="login">Iniciar sesión</button>)}
-        <button onClick={handleCart} className="cart">🛒 Carrito</button>
+        
       </div>)
 
       :( 
@@ -76,7 +74,6 @@
          (<div className="actions">
         {!pathIniciar &&(<button onClick={cerrarSesion} className='cerrarSesion'>{usuarioActual}</button>)}
         <button onClick={handleReservas}> Reservas </button>
-        <button onClick={handleCart} className="cart">🛒 Carrito</button>
         </div>)
 
       )
