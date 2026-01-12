@@ -71,15 +71,22 @@ p {
 .reservar-boton {
   padding: 12px 24px;
   font-size: 18px;
-  background-color: #0077cc;
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  background-color: #0077cc;
+  transition: background-color 0.3s ease;
 }
 
-.reservar-boton:hover {
+.reservar-boton:hover:not(:disabled) {
   background-color: #005fa3;
+}
+
+.reservar-boton:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  color: #666;
 }
 
 @media (max-width: 768px) {
