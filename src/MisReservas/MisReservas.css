@@ -1,0 +1,29 @@
+.reservas-usuario{
+
+    display: inline-block;
+    width: 23%;
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    cursor: pointer;
+    text-align: center;
+
+}
+
+.imagen-reserva{
+
+    width: 100%;
+    height: 200px;
+}
+
+.cancelar-reserva{
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}

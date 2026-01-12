@@ -40,7 +40,7 @@ function IniciarSesion({users}) {
 
        if(response.ok){
         console.log("Login correcto", data);
-        localStorage.setItem("usuario", data.usuario.usuario);
+        localStorage.setItem("usuario", JSON.stringify(data.usuario));
         navigate("/");
        } else console.log("Error en el login", data);
 

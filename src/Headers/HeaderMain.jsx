@@ -14,9 +14,7 @@
     const handleMain = () => {
       navigate("/");
     };
-    const handleCart = () => {
-    navigate("/carrito");
-    }
+
     const handleReservas = () =>{
       navigate("/misreservas");
 
@@ -32,7 +30,12 @@
     useEffect(() => {
     const datosGuardados = localStorage.getItem("usuario");
     if (datosGuardados) {
-      setUsuario(datosGuardados);
+      try {
+        const usuarioObj = JSON.parse(datosGuardados);
+        setUsuario(usuarioObj.usuario);
+      } catch (e) {
+        setUsuario(null);
+      }
     }
   }, []);
 
@@ -41,8 +44,7 @@
     const pathVerMas = location.pathname === "/vermas"; 
     const pathMain = location.pathname === "/";
     const pathIniciar = location.pathname === "/iniciarsesion";
-    const pathRegistro = location.pathname === "/registro";
-    const pathReservar = location.pathname === "/reservar";
+
  
     return (
       
@@ -64,7 +66,7 @@
     { !usuarioActual ?(
       <div className="actions">
         {!pathIniciar && (<button onClick={handleInic} className="login">Iniciar sesión</button>)}
-        <button onClick={handleCart} className="cart">🛒 Carrito</button>
+        
       </div>)
 
       :( 
@@ -72,7 +74,6 @@
          (<div className="actions">
         {!pathIniciar &&(<button onClick={cerrarSesion} className='cerrarSesion'>{usuarioActual}</button>)}
         <button onClick={handleReservas}> Reservas </button>
-        <button onClick={handleCart} className="cart">🛒 Carrito</button>
         </div>)
 
       )
