@@ -49,6 +49,25 @@ function MisReservas(){
       console.log("Reserva seleccionada:", item);
     };
 
+    const handleCancelarReserva = async (reserva_id) => {
+      try {
+        const response = await fetch(`http://127.0.0.1:8000/misreservas?reserva_id=${reserva_id}`, {
+          method: 'DELETE'
+        });
+        if (response.ok) {
+          const data = await response.json();
+          console.log(data.mensaje);
+          setMisReservas(reservas.filter(r => r.id !== reserva_id));
+        }
+      } catch (err) {
+        console.error('Error cancelando reserva:', err);
+        setError(err.message);
+      }
+    };
+
+
+
+
     if (loading) return <div><Header /><p>Cargando reservas...</p></div>;
     if (error) return <div><Header /><p>Error: {error}</p></div>;
     if (!usuarioActual) return <div><Header /><p>Por favor, inicia sesión para ver tus reservas</p></div>;
@@ -61,6 +80,7 @@ function MisReservas(){
             <div key={d.id} className="reservas-usuario" onClick={() => handleClick(d)}>
               <img className='imagen-reserva' src={d.foto} alt={d.nombre_item} />             
               <h3>{d.nombre_item} - {d.precio}€</h3>
+              <button className="cancelar-reserva" onClick={() => handleCancelarReserva(d.id)}>Cancelar reserva</button>
             </div>
           ))
         ) : (

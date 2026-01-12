@@ -18,6 +18,7 @@ function Reservar() {
     const [usuario, setUsuario] = useState(null);
     const [error, setError] = useState(""); 
     const [loading, setLoading] = useState(false);
+    const [itemReservado, setItemReservado] = useState(false);
 
     useEffect(() => {
     const datosGuardados = localStorage.getItem("usuario");
@@ -32,6 +33,24 @@ function Reservar() {
 
 
     }, []);
+
+    useEffect(() => {
+      if (item) {
+        const verificarEstado = async () => {
+          try {
+            const tipo = item.tipo === "viaje" ? "viaje" : "hotel";
+            const response = await fetch(`${API_URL}/misreservas/estado?item_id=${item.id}&tipo=${tipo}`);
+            if (response.ok) {
+              const data = await response.json();
+              setItemReservado(data.reservado);
+            }
+          } catch (err) {
+            console.error('Error verificando estado:', err);
+          }
+        };
+        verificarEstado();
+      }
+    }, [item]);
 
     async function reservar(){
       
@@ -124,8 +143,16 @@ function Reservar() {
         {item.incluye }
       </li>
     </ul>
-    <button className="reservar-boton" onClick={reservar} disabled={loading}>
-      {loading ? "Reservando..." : "Reservar ahora"}
+    <button 
+      className="reservar-boton" 
+      onClick={reservar} 
+      disabled={loading || itemReservado}
+      style={{
+        backgroundColor: itemReservado ? '#cccccc' : '',
+        cursor: itemReservado ? 'not-allowed' : 'pointer'
+      }}
+    >
+      {itemReservado ? "Reservado" : loading ? "Reservando..." : "Reservar ahora"}
     </button>
     {error && <p style={{ color: "red" }}>{error}</p>}
   </div>
@@ -154,8 +181,16 @@ function Reservar() {
               </li>
               <li><strong>Valoracion </strong> <Estrellas valor = {item.estrellas}/>  </li>
             </ul>
-            <button className="reservar-boton" onClick={reservar} disabled={loading}>
-              {loading ? "Reservando..." : "Reservar ahora"}
+            <button 
+              className="reservar-boton" 
+              onClick={reservar} 
+              disabled={loading || itemReservado}
+              style={{
+                backgroundColor: itemReservado ? '#cccccc' : '',
+                cursor: itemReservado ? 'not-allowed' : 'pointer'
+              }}
+            >
+              {itemReservado ? "Reservado" : loading ? "Reservando..." : "Reservar ahora"}
             </button>
             {error && <p style={{ color: "red" }}>{error}</p>}
           </div>
