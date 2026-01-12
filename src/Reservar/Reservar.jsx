@@ -147,13 +147,6 @@ function Reservar() {
       className="reservar-boton" 
       onClick={reservar} 
       disabled={loading || itemReservado}
-<<<<<<< HEAD
-=======
-      style={{
-        backgroundColor: itemReservado ? '#cccccc' : '',
-        cursor: itemReservado ? 'not-allowed' : 'pointer'
-      }}
->>>>>>> 1a0f7351b7e3137f966d918e58fb4e28351cb993
     >
       {itemReservado ? "Reservado" : loading ? "Reservando..." : "Reservar ahora"}
     </button>
